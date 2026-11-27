@@ -1,10 +1,12 @@
-import { StyleSheet, Text, View } from 'react-native';
+// import libraries necessary for navigation and screen components
+import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { colors } from '../theme/colors';
 import { LinearGradient } from 'expo-linear-gradient';
 
-
-export default function HomeScreen() {
+// define the HomeScreen component. This component represents the Home screen of the app. It displays a gradient background with a title, subtitle, and footer.
+export default function HomeScreen({ navigation }) {
   return (
+    // use LinearGradient to create a gradient background for the Home screen. The colors, start, and end points of the gradient are defined in the colors object imported from the theme.
     <LinearGradient
       colors={colors.gradients.dark.colors}
       start={colors.gradients.dark.start}
@@ -13,6 +15,11 @@ export default function HomeScreen() {
     >
         <Text style={styles.title}>XXI.ARCHIVE</Text>
         <Text style={styles.subtitle}>Ta bibliothèque créative</Text>
+        <Pressable>
+          <Text style={styles.buttonText} onPress={() => { console.log('Explore button pressed'); navigation.navigate('Archive'); }}>
+            Explore
+          </Text>
+        </Pressable>
         <Text style={styles.footer}>XXI.STUDIOS · Version 1.0.0</Text>
 
     </LinearGradient>
@@ -46,4 +53,12 @@ const styles = StyleSheet.create({
     color: colors.sand,
     fontSize: 12,
   },
+  button: {
+    marginTop: 24,
+    backgroundColor: colors.red,
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    borderRadius: 8,
+  },
+  buttonText: { color: colors.offWhite, fontWeight: 'bold' },
 });
