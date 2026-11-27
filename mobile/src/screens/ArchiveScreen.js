@@ -2,7 +2,6 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { colors } from '../theme/colors';
 
-
 // define the ArchiveScreen component. This component represents the Archive screen of the app. It displays a simple view with a title.
 export default function ArchiveScreen() {
   return (
@@ -11,7 +10,6 @@ export default function ArchiveScreen() {
     </View>
   );
 }
-
 
 // define the styles for the ArchiveScreen component. The styles are created using StyleSheet.create, which provides a way to define styles in a structured manner.
 const styles = StyleSheet.create({
