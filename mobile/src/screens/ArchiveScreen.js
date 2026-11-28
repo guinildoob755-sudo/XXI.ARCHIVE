@@ -1,13 +1,19 @@
 // import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Pressable } from 'react-native';
 import { colors } from '../theme/colors';
 
+
 // define the ArchiveScreen component. This component represents the Archive screen of the app. It displays a simple view with a title.
-export default function ArchiveScreen() {
+export default function ArchiveScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Archive</Text>
+        <Pressable onPress={() => navigation.navigate('Import')} style={styles.button}>
+          <Text style={styles.buttonText}>Import</Text>
+        </Pressable> 
+
     </View>
+    
   );
 }
 
@@ -24,4 +30,17 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
   },
+    button: {
+    marginTop: 20,
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    backgroundColor: colors.gold,
+    borderRadius: 5,
+    },
+    buttonText: {
+    color: colors.black,
+    fontSize: 16,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    },
 });

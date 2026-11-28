@@ -2,6 +2,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import TabNavigator from './TabNavigator';
 import { colors } from '../theme/colors';
+import ImportScreen from '../screens/ImportScreen';
+
 
 const Stack = createNativeStackNavigator();
 
@@ -19,7 +21,11 @@ export default function AppNavigator() {
           component={TabNavigator}
           options={{ headerShown: false }}
         />
-        {/* Les écrans Import et ResourceDetail viendront ici */}
+        <Stack.Screen
+          name="Import"
+          component={ImportScreen}
+          options={{ title: 'Importer' }}
+/>
       </Stack.Navigator>
     </NavigationContainer>
   );

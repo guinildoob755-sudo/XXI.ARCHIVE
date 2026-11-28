@@ -22,6 +22,7 @@ export default function HomeScreen({ navigation }) {
         XXI.STUDIOS · Version 1.0.0
       </Text>
     </LinearGradient>
+    
   );
 }
 
